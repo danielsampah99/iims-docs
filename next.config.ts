@@ -1,7 +1,11 @@
+import withSearch from "@/markdoc/search.mjs";
+import withMarkDoc from "@markdoc/next.js";
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+	pageExtensions: ["js", "jsx", "md", "ts", "tsx", "mdoc"],
 };
 
-export default nextConfig;
+export default withSearch(
+	withMarkDoc({ schemaPath: "./src/markdoc" })(nextConfig),
+);
