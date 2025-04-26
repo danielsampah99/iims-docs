@@ -11,12 +11,18 @@ export const routes = [
 	{
 		title: "Customers",
 		links: [
-			{ title: "New Customer", href: "/docs/new-customer" },
+			{
+				title: "New Customer",
+				href: "/docs/new-customer",
+			},
 			{
 				title: "All Customers",
 				href: "/docs/all-customers",
 			},
-			{ title: "New Prospect", href: "/docs/new-prospect" },
+			{
+				title: "New Prospect",
+				href: "/docs/new-prospect",
+			},
 			{
 				title: "All Prospects",
 				href: "/docs/all-prospects",
