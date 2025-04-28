@@ -35,6 +35,10 @@ export const routes = [
 				title: "Customer Statements",
 				href: "/docs/customer-statements",
 			},
+			{
+				title: "Edit Customer",
+				href: "/docs/edit-customer",
+			},
 		],
 	},
 ];
