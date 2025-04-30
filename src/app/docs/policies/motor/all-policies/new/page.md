@@ -10,6 +10,18 @@ A policy is the product an insurance company offers to protect its customers aga
 
 ---
 
+## Navigating to the Motor Policy Creation form
+1. Login to the Integrated Insurance Management System, Navigate to the **Policies** Section of the sidebar and from the list of risk classes:
+* Motor Policies
+* Fire Policies
+* Accident Policies
+* Engineering Policies
+* Bond Policies
+* Marine Policies
+* Oil & Gas Policies
+
+2. To underwrite a **Motor Policy**, click on the "New Motor Policy" button from the "Policies" section to access the __form__ grouped into sections of customer, intermediary agency, vehicle, sticker, policy details, and premium calculations.
+
 ## New Motor Policy Form Overview
 
 The New Motor Policy form is a comprehensive interface for creating vehicle insurance policies split into multiple frames for customer, vehicle, policy details, and premium calculations.
@@ -19,7 +31,7 @@ The New Motor Policy form is a comprehensive interface for creating vehicle insu
 ### Accessing the New Motor Policy Form
 
 1. Log into the Insurance Management System
-2. Navigate to "All Motor Policies" page
+2. Navigate to "Motor" section
 3. Click the "New Motor Policy" button
 4. The system displays the policy creation form
 
@@ -42,6 +54,8 @@ The New Motor Policy form is organized into 8 main sections:
 
 This section contains fundamental policy identifiers and status information that establish the core parameters of the policy.
 
+![Basic Policy Information](/new-motor-policy-basic.webp)
+
 ### Branch
 The branch field (marked with *) is a required dropdown selection that identifies which office location is issuing the policy. This affects reporting, commission calculations, and user access permissions. The dropdown includes all authorized branches the current user has access to, with an 'x' button to clear the selection if needed.
 
@@ -63,7 +77,7 @@ A system-generated field used when the policy is part of a multi-vehicle fleet i
 
 This section captures comprehensive details about the policyholder and establishes the legal relationship between the insurer and the insured party. A customer can be selected from existing customer records by clicking the the search button **Magnifiying Glass Icon** to open the dialog that allows for searching or finding existing customers/ policy holders
 
-![Customer Information Section](/new-motor-policy-customer.webp)
+![Customer Information Section](/new-motor-policy-customer-section.webp)
 
 ### Customer Number
 A unique identifier that connects the policy to an existing customer record in the system. This text field is autopopulated via a quick lookup of existing customers from the database.
@@ -81,13 +95,17 @@ The primary contact telephone number for the policyholder. This information is u
 This field captures information about any third party with a financial stake in the insured vehicle, such as a bank or leasing company that has provided financing. When a vehicle is financed, this field should contain the lender's name and any relevant loan or lease reference numbers. This ensures the interest is properly noted on the policy documents.
 
 ### Search Functionality
-The customer search functionality allows quick access to existing customer records. When the search button is clicked, a lookup dialog appears where users can search by name, phone, or other identifiers. Once a customer is selected, all fields are populated automatically. Users can still edit customer information directly in the form if needed, which can also update the customer record in the database depending on user permissions.
+The customer search functionality allows quick access to existing customer records. When the search button is clicked, a lookup dialog appears where users can search by name, phone, or other identifiers. Once a customer is selected, all fields are populated automatically. Users can still edit customer information directly in the form if needed, which can also update the customer record in the database depending on user permissions. {% .text-justify %}
+
+![Customer Search Dialog](/new-motor-policy-customer-search.webp)
 
 ---
 
 ## Intermediary Information
 
 This section captures details about any broker, agent, or intermediary involved in facilitating the policy arrangement between the insurance company and the customer.
+
+![Intermediary Agency Section](/new-motor-policy-intermediary-section.webp)
 
 ### Intermediary Number
 This field contains the unique identification code assigned to the broker or agent who arranged the policy. Like the customer number field, it includes a search button (magnifying glass icon) that provides access to the intermediary database. This mandatory field is only populated via a lookup. The intermediary number serves as the link to commission calculations and broker performance tracking.
@@ -102,7 +120,9 @@ The complete business address of the intermediary, displayed in a multi-line tex
 The primary contact telephone number for the intermediary. This field auto-populates when an intermediary record is selected but can be updated if needed. This contact information facilitates direct communication regarding policy details, customer inquiries, or commission matters.
 
 ### Intermediary Search
-The intermediary search function operates similarly to the customer search, providing a convenient way to retrieve authorized intermediary details from the system database. Clicking the magnifying glass icon opens a search dialog where users can look up intermediaries by name, code, or region. The system maintains a register of approved intermediaries, ensuring that only authorized entities can be associated with policies. If the policy is arranged directly with no intermediary involvement, all these fields should remain blank.
+The intermediary search function operates similarly to the customer search, providing a convenient way to retrieve authorized intermediary details from the system database. Clicking the magnifying glass icon opens a search dialog where users can look up intermediaries by name, code, or region. The system maintains a register of approved intermediaries, ensuring that only authorized entities can be associated with policies. If the policy is arranged directly with no intermediary involvement, all these fields should remain blank. {% .text-justify %}
+
+![Intermediary Agency Search](/new-motor-policy-intermediary-search.webp)
 
 ---
 
@@ -110,7 +130,7 @@ The intermediary search function operates similarly to the customer search, prov
 
 This section captures detailed specifications about the insured vehicle, providing the technical basis for risk assessment and premium calculation.
 
-![Vehicle Information Section](/new-motor-policy-vehicle.webp)
+![Vehicle Information Section](/new-motor-policy-vehicle-section.webp)
 
 ### Vehicle Registration
 The official license plate number or registration identifier assigned by the transportation authority. This required text field serves as the primary public identifier for the vehicle and must match exactly what appears on the vehicle's registration document. The system may enforce specific formatting rules based on local registration standards. This information is critical for verification purposes and appears on all policy documentation.
@@ -150,33 +170,51 @@ The information provided in this section collectively determines the vehicle's r
 
 ---
 
+## Sticker Information
+
+This section captures regulatory documentation details for the policy.
+
+![Sticker Section](/new-customer-policy-sticker-section.webp)
+
+### Fields
+
+**Sticker Number** Auto-generated text input generated by the system.
+
+**Certificate NUmber** Associated certificate for the Sticker
+
+**Brown Card Number**
+
+---
+
 ## Policy Information
 
 This section defines the coverage specifics, policy duration, and financial terms that form the contractual basis of the insurance agreement.
 
+![Policy Section](/new-motor-policy-info-section.webp)
+
 ### Fleet
-A toggle button that indicates whether this policy is part of a fleet arrangement covering multiple vehicles under a single policy structure. When set to "On," the system enables special fleet-related features and calculations, including potential fleet discounts. This setting is typically auto-determined based on the existence of a Fleet Number in the basic information section but can be manually adjusted when necessary.
+A toggle button that indicates whether this policy is part of a fleet arrangement covering multiple vehicles under a single policy structure. When set to "On," the system enables special fleet-related features and calculations, including potential fleet discounts and uploads in a specified format. This setting is typically auto-determined based on the existence of a Fleet Number in the basic information section but can be manually adjusted when necessary. {% .text-justify %}
 
 ### Currency
-A dropdown field specifying the currency in which the policy is denominated. The example shows "Gambian Dalasi" as the selected option. This required field affects all monetary calculations and reporting. The system typically defaults to the local currency of operation but provides options for policies that need to be issued in foreign currencies, such as for international clients or special arrangements.
+A dropdown field specifying the currency in which the policy is denominated. The default selected option is always the currency set up as the base . This required field affects all monetary calculations and reporting. The system typically defaults to the local currency of operation but provides options for policies that need to be issued in foreign currencies, such as for international clients or special arrangements. {% .text-justify %}
 
 ### Exchange Rate
-A numeric input field that specifies the conversion rate between the selected currency and the system's base currency. This field is marked as required (*) and defaults to 1.00 for local currency policies. For foreign currency policies, this rate is used to calculate the equivalent values in the system's base currency for accounting and reporting purposes.
+A numeric input field that specifies the conversion rate between the selected currency and the system's base currency. This field is marked as required (*) and defaults to 1.00 for local currency policies. For foreign currency policies, this value can be set to the rate at the time of policy issuance or renewal, which is used to calculate the equivalent values in the system's base currency for accounting and reporting purposes.
 
 ### Computation
-A dropdown selection that determines how the policy term is calculated. The example shows "One Year" as the selected option. This required field affects date calculations and premium prorating. Other common options might include "Six Months," "Three Months," or "Custom Period" depending on the system configuration and local insurance practices.
+A dropdown selection that determines how the policy term is calculated. The example shows "One Year" as the selected option. This required field affects date calculations and premium prorating. Other common options might include "Pro Rata," "Short Term,"
 
 ### Days
-A numeric input showing the total number of days of coverage provided by the policy. The example shows 364 days, which is typical for a one-year policy (allowing for renewal processing). This field is auto-calculated based on the effective and expiry dates but may be adjusted manually in special circumstances, which would then recalculate the expiry date.
+A numeric input showing the total number of days of coverage provided by the policy. The example shows 364 days, which is typical for a one-year policy mostly attached ot the selected value for __"Computation"__ (allowing for renewal processing). This field is auto-calculated based on the effective and expiry dates but may be adjusted manually in special circumstances, which would then recalculate the expiry date.
 
 ### Issue Date
-The date when the policy is created in the system, presented in a date picker field using YYYY-MM-DD format. This field is typically auto-filled with the current date but can be adjusted if necessary. The issue date is used for administrative tracking and may differ from the effective date in cases of advance booking or backdating.
+The date when the policy is created in the system, presented in a date picker field using YYYY-MM-DD format. This field is typically auto-filled with the current date but and cannot be adjusted. The issue date is used for administrative tracking and may differ from the effective date in cases of advance booking or backdating.
 
 ### Effective Date
 The date when insurance coverage begins, entered in a date picker field using YYYY-MM-DD format. This required field establishes the official start of the coverage period. The system allows this date to be set in the past (backdating) or future (advance booking) within authorized limits, typically controlled by user permissions.
 
 ### Expiry Date
-The date when insurance coverage ends, presented in a date picker field using YYYY-MM-DD format. This field is auto-calculated based on the effective date and the selected computation period (showing 2026-04-28 in the example, which is 364 days after the effective date). The expiry date marks the point at which the policy must be renewed to maintain continuous coverage.
+The date when insurance coverage ends, presented as a read-onlydate picker field using YYYY-MM-DD format. This field is auto-calculated based on the effective date and the selected computation period and number of days selected (showing 2026-04-28 in the example, which is 364 days, One year for computation period, after the effective date). The expiry date marks the point at which the policy must be renewed to maintain continuous coverage.
 
 ### Cover Type
 A dropdown selection (marked with *) that defines the level of insurance protection provided. This critical field determines which coverages are included in the policy and directly affects premium calculations. Common options include "Third Party Only," "Third Party Fire & Theft," and "Comprehensive," each with distinct coverage scopes and pricing structures.
@@ -194,16 +232,16 @@ A numeric input field for the base premium rate applied to the sum insured to ca
 A dropdown selection that defines the customer's financial responsibility in the event of a claim. The example shows "Excess Is Not Applicable" as the selected option. This required field determines whether the policyholder must pay an initial portion of any claim before insurance coverage applies. The excess structure affects premium calculations, with higher excess levels typically resulting in lower premiums.
 
 ### Excess Rate
-A numeric input field showing the rate used to calculate the excess amount when applicable. This field is displayed as 0.00 when excess is not applicable. When an excess applies, this rate is used to calculate the specific excess amount based on the sum insured or claim value, depending on the excess structure.
+A numeric input field showing the rate used to calculate the excess amount when applicable. This field is displayed as 0.00 when excess is not applicable. When an excess applies, this rate is used to calculate the specific excess amount based on the __Cover Type__, depending on the excess structure.
 
 ### Co Insure
 A text input field for recording details of any co-insurance arrangement where risk is shared with other insurers. This optional field is used when the policy risk is distributed among multiple insurance companies, specifying the participating insurers and their respective shares of the risk.
 
 ### Tppd Limit
-A numeric input field that specifies the maximum amount the insurer will pay for third-party property damage claims. This required field sets an important coverage limit that appears in policy documentation. The limit is typically determined by regulatory requirements and underwriting guidelines based on vehicle type and usage.
+The _Third Party Property Dmage_ limit is numeric input field that specifies the maximum amount the insurer will pay for third-party property damage claims. This required field sets an important coverage limit that appears in policy documentation. The limit is typically determined by regulatory requirements and underwriting guidelines based on vehicle type and usage.
 
 ### Tppd Rate
-A numeric input field showing the rate used to calculate the third-party property damage premium component. This field is typically system-calculated based on the TPPD limit and risk factors associated with the vehicle and coverage type. The rate is applied to the TPPD limit to determine this portion of the premium.
+The _Third Party Property Dmage_ rate is a numeric input field showing the rate used to calculate the third-party property damage premium component. This field is typically system-calculated based on the TPPD limit and risk factors associated with the vehicle and coverage type. The rate is applied to the TPPD limit to determine this portion of the premium.
 
 ### Date Handling
 The policy dates follow specific business rules for consistency and compliance. The Issue Date defaults to the current system date when a new policy is created. The Effective Date may be backdated within authorized limits, typically controlled by user permissions and regulatory constraints. The Expiry Date is automatically calculated based on the Effective Date and the selected Computation period, with the example showing a one-year policy running for 364 days to allow processing time for renewal.
@@ -218,7 +256,9 @@ The "Other Details" section provides tabbed access to additional policy informat
 
 ### Loading Tab
 
-The Loading tab manages premium adjustments that increase the base premium due to specific risk factors or coverage enhancements. This tab is active by default when opening the Other Details section, as shown in the image. Loading adjustments are crucial for risk-appropriate pricing that accounts for factors not captured in the standard rating structure.
+The Loading tab manages premium adjustments that increase the base premium due to specific risk factors like a vehicle being 10 years or older. This tab is active by default when opening the Other Details section, as shown in the image. Loading adjustments are crucial for risk-appropriate pricing that accounts for factors not captured in the standard rating structure and can be added by first selecting the appropriate __Loading Type__ as "YES" or "NO", __Principal or Limit__., __Rate__ and __Amount__
+
+![Loading Tab](/new-motor-policy-loading.webp)
 
 The tab displays a tabular view with four key columns:
 
@@ -266,24 +306,11 @@ The Messages tab maintains a communication log relate
 
 ---
 
-## Sticker Information
-
-This section captures regulatory documentation details for the policy.
-
-### Fields
-
-**Sticker Number** Autogenerated text input generated by the system.
-**Certificate NUmber** Associated certificate for the Sticker
-**Brown Card Number*
-
-
----
-
 ## Premium Computation
 
 This section provides a detailed breakdown of the premium calculation with itemized components, offering transparency into how the final premium is derived.
 
-![Premium Computation Section](/new-motor-policy-premium.webp)
+![Premium Computation Section](/new-motor-policy-computation-section.webp)
 
 ### Third Party Basic
 The foundational premium component covering the mandatory third-party liability required by law. This amount is calculated based on the vehicle type, body class, and seating capacity. This is a non-negotiable component present in all motor policies regardless of coverage level, as it fulfills the legal requirement for minimum insurance coverage. The calculation typically follows regulatory guidelines that specify minimum rates based on vehicle categories.
