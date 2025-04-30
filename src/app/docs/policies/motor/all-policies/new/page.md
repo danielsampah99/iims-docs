@@ -148,7 +148,7 @@ The predominant exterior color of the vehicle. This required text field provides
 A dropdown selection that classifies the vehicle according to its structural design (e.g., Sedan, SUV, Pickup). This required field significantly impacts risk assessment and premium calculation, as different body types are associated with varying risk profiles. The body type also influences coverage options and may trigger specific endorsements or exclusions.
 
 ### Seats
-The total passenger capacity of the vehicle, including the driver's seat. This numeric input field is required because it directly affects third-party liability coverage calculation, particularly for personal injury protection. Regulatory requirements often mandate minimum coverage amounts based on seating capacity, especially for commercial vehicles.
+The total passenger capacity of the vehicle, including the driver's seat. This numeric input field is required because it directly affects third-party liability coverage calculation, particularly for personal injury protection. This field is pre-populated by selected the body type. Every type of vehicle has a number of seats. For commercial vehicles, the number of seats can only be increased and never go below the standard. Any additional seats afftect the premium calculation. Regulatory requirements often mandate minimum coverage amounts based on seating capacity, especially for commercial vehicles.
 
 ### Chassis Number
 The Vehicle Identification Number (VIN) or chassis identifier that uniquely identifies the specific vehicle. This required text field contains the manufacturer's unique code that distinguishes this vehicle from all others. The chassis number is critical for claims verification, theft recovery, and establishing the exact specification of the insured vehicle.
@@ -223,7 +223,7 @@ A dropdown selection (marked with *) that defines the level of insurance protect
 A dropdown selection that specifies the policy schedule type, which defines the structure and presentation of the policy documentation. This required field affects how the policy terms are formatted and which clauses are included in the final documentation. The schedule type may vary based on vehicle category, customer type, or specific regulatory requirements.
 
 ### Sum Insured
-A numeric input field showing the total insured value of the vehicle, expressed in the selected currency. This required field is the primary basis for premium calculation for comprehensive coverage. It represents the maximum potential payout in the event of a total loss and should accurately reflect the vehicle's current market value.
+A numeric input field showing the total insured value of the vehicle, expressed in the selected currency. This required field is the primary basis for premium calculation for comprehensive coverage. It represents the maximum potential payout in the event of a total loss and should accurately reflect the vehicle's current market value. A value can only be entered if the selected cover type is "Comprehensive" the entered value affects the computation. No other cover types takes a value for sum insured
 
 ### Rate
 A numeric input field for the base premium rate applied to the sum insured to calculate the basic premium. This required field is typically determined by underwriting guidelines based on vehicle type, usage, and cover type. The rate is expressed as a percentage of the sum insured for comprehensive coverage or as a fixed rate for third-party coverage.
@@ -238,71 +238,13 @@ A numeric input field showing the rate used to calculate the excess amount when 
 A text input field for recording details of any co-insurance arrangement where risk is shared with other insurers. This optional field is used when the policy risk is distributed among multiple insurance companies, specifying the participating insurers and their respective shares of the risk.
 
 ### Tppd Limit
-The _Third Party Property Dmage_ limit is numeric input field that specifies the maximum amount the insurer will pay for third-party property damage claims. This required field sets an important coverage limit that appears in policy documentation. The limit is typically determined by regulatory requirements and underwriting guidelines based on vehicle type and usage.
+The _Third Party Property Damage_ limit is a numeric input field that specifies the maximum amount the insurer shall pay for third-party property damage claims. This required field establishes a crucial coverage limit, which is detailed in the policy documentation. The limit is typically dictated by regulatory stipulations and underwriting guidelines, based on vehicle type and usage. Any increase will result in an additional increase in premium calculation.
 
 ### Tppd Rate
-The _Third Party Property Dmage_ rate is a numeric input field showing the rate used to calculate the third-party property damage premium component. This field is typically system-calculated based on the TPPD limit and risk factors associated with the vehicle and coverage type. The rate is applied to the TPPD limit to determine this portion of the premium.
+The _Third Party Property Damage_ rate is a numeric input field showing the rate used to calculate the third-party property damage premium component. This field is typically system-calculated based on the TPPD limit and risk factors associated with the vehicle and coverage type. The rate is applied to the TPPD limit to determine this portion of the premium. An increase in the rate results in an increase in the premium.
 
 ### Date Handling
 The policy dates follow specific business rules for consistency and compliance. The Issue Date defaults to the current system date when a new policy is created. The Effective Date may be backdated within authorized limits, typically controlled by user permissions and regulatory constraints. The Expiry Date is automatically calculated based on the Effective Date and the selected Computation period, with the example showing a one-year policy running for 364 days to allow processing time for renewal.
-
----
-
-## Other Details Tab Panel
-
-The "Other Details" section provides tabbed access to additional policy information that complements the main policy data while keeping the interface organized and accessible.
-
-![Other Details Tabs](/new-motor-policy-other-details.webp)
-
-### Loading Tab
-
-The Loading tab manages premium adjustments that increase the base premium due to specific risk factors like a vehicle being 10 years or older. This tab is active by default when opening the Other Details section, as shown in the image. Loading adjustments are crucial for risk-appropriate pricing that accounts for factors not captured in the standard rating structure and can be added by first selecting the appropriate __Loading Type__ as "YES" or "NO", __Principal or Limit__., __Rate__ and __Amount__
-
-![Loading Tab](/new-motor-policy-loading.webp)
-
-The tab displays a tabular view with four key columns:
-
-**Loading Type** identifies the category of loading being applied. Common loading types include Age (for young or elderly drivers), Occupation (for high-risk professions), Vehicle Modification (for non-standard alterations), or Claims History (for previous loss experience). Each loading type corresponds to a specific risk factor that warrants a premium adjustment.
-
-**Principal/Limit** defines the amount or percentage basis to which the loading applies. This may be a monetary value or a reference to a coverage limit affected by the loading. The principal establishes the foundation for the loading calculation and ensures that premium increases are proportional to the associated risk.
-
-**Rate** specifies the loading calculation rate applied to the principal amount. This is typically expressed as a percentage and represents the severity of the risk factor. Higher rates indicate greater perceived risk or more significant coverage enhancement.
-
-**Amount** shows the calculated monetary value of the loading, which is added to the base premium. This field typically displays the result of multiplying the Principal/Limit by the Rate and represents the actual premium increase for this specific factor.
-
-The **Add Loading** button (shown as a green button at the bottom of the tab) creates new loading entries for specific risk factors. When clicked, it opens a loading definition dialog where underwriters can select the loading type, specify the principal and rate, and add any necessary notes. Each policy can have multiple loading factors to address all relevant risk characteristics.
-
-### Disc. Tab
-
-The Discounts tab manages premium reductions granted for favorable risk characteristics or marketing incentives. Similar to the Loading tab structure, this tab allows underwriters to apply and track various discount types such as No Claims Discount, Security Device Discount, or Loyalty Discount. Each discount entry reduces the premium by a calculated amount based on specified criteria.
-
-### Accessories Tab
-
-The Accessories tab documents additional items attached to the vehicle that require specific coverage. This tab allows recording of non-standard equipment such as expensive sound systems, custom wheels, or aftermarket modifications. Each accessory can be listed with its value, which may increase both the sum insured and the premium. This detailed documentation ensures proper coverage for all vehicle components.
-
-### Comments Tab
-
-The Comments tab provides a free-text area for underwriters and administrators to add notes, observations, and special instructions related to the policy. These comments might include underwriting considerations, inspection requirements, or customer service notes. The comment history is preserved for future reference and creates an audit trail of policy decisions and communications.
-
-### Covered Countries Tab
-
-The Covered Countries tab specifies the geographic regions where the insurance coverage is valid. By default, coverage typically applies only within the country of issue, but this tab allows extension to specific additional countries as needed. Each country entry may affect the premium and trigger specific endorsements or documentation requirements like International Motor Insurance Cards.
-
-### Renewals Tab
-
-The Renewals tab tracks the policy's renewal history and future scheduling. For existing policies being renewed, this tab shows previous terms, premium history, and coverage changes over time. For new policies, this tab remains relatively empty until the first renewal cycle approaches. The renewal information helps maintain continuity of coverage and supports customer retention efforts.
-
-### Claims Tab
-
-The Claims tab displays the claim history associated with this specific vehicle and policyholder. For vehicles with previous insurance, this tab may show imported claims data that impacts current underwriting decisions. Each claim entry typically includes date, type, amount, and status information. This claim history directly influences premium calculations and coverage eligibility.
-
-### Endorsements Tab
-
-The Endorsements tab manages policy amendments that occur after the initial policy issuance. Endorsements might include changes to vehicle details, coverage limits, or policyholder information. Each endorsement is recorded with its effective date, description, and premium impact. This tab ensures that all policy modifications are properly documented and priced.
-
-### Messages Tab
-
-The Messages tab maintains a communication log relate
 
 ---
 
@@ -362,6 +304,64 @@ The final amount payable by the policyholder, representing the sum of all premiu
 
 ### Automatic Calculations
 The premium computation section largely operates through automatic calculations driven by the data entered in other sections of the form. Most fields showing monetary values (particularly those displaying 0.00 in the example) are system-calculated results rather than user input fields. These calculations apply complex rating algorithms and underwriting rules to ensure consistent pricing. The final premium amount is system-calculated based on all relevant factors, providing both accuracy and efficiency in the quoting process.
+
+---
+
+## Other Details Tab Panel
+
+The "Other Details" section provides tabbed access to additional policy information that complements the main policy data while keeping the interface organized and accessible.
+
+![Other Details Tabs](/new-motor-policy-other-details.webp)
+
+### Loading Tab
+
+The Loading tab manages premium adjustments that increase the base premium due to specific risk factors like a vehicle being 10 years or older. This tab is active by default when opening the Other Details section, as shown in the image. Loading adjustments are crucial for risk-appropriate pricing that accounts for factors not captured in the standard rating structure and can be added by first selecting the appropriate __Loading Type__ as "YES" or "NO", __Principal or Limit__., __Rate__ and __Amount__
+
+![Loading Tab](/new-motor-policy-loading.webp)
+
+The tab displays a tabular view with four key columns:
+
+**Loading Type** identifies the category of loading being applied. Common loading types include Age (for young or elderly drivers), Occupation (for high-risk professions), Vehicle Modification (for non-standard alterations), or Claims History (for previous loss experience). Each loading type corresponds to a specific risk factor that warrants a premium adjustment.
+
+**Principal/Limit** defines the amount or percentage basis to which the loading applies. This may be a monetary value or a reference to a coverage limit affected by the loading. The principal establishes the foundation for the loading calculation and ensures that premium increases are proportional to the associated risk.
+
+**Rate** specifies the loading calculation rate applied to the principal amount. This is typically expressed as a percentage and represents the severity of the risk factor. Higher rates indicate greater perceived risk or more significant coverage enhancement.
+
+**Amount** shows the calculated monetary value of the loading, which is added to the base premium. This field typically displays the result of multiplying the Principal/Limit by the Rate and represents the actual premium increase for this specific factor.
+
+The **Add Loading** button (shown as a green button at the bottom of the tab) creates new loading entries for specific risk factors. When clicked, it opens a loading definition dialog where underwriters can select the loading type, specify the principal and rate, and add any necessary notes. Each policy can have multiple loading factors to address all relevant risk characteristics.
+
+### Disc. Tab
+
+The Discounts tab manages premium reductions granted for favorable risk characteristics or marketing incentives. Similar to the Loading tab structure, this tab allows underwriters to apply and track various discount types such as No Claims Discount, Security Device Discount, or Loyalty Discount. Each discount entry reduces the premium by a calculated amount based on specified criteria.
+
+### Accessories Tab
+
+The Accessories tab documents additional items attached to the vehicle that require specific coverage. This tab allows recording of non-standard equipment such as expensive sound systems, custom wheels, or aftermarket modifications. Each accessory can be listed with its value, which may increase both the sum insured and the premium. This detailed documentation ensures proper coverage for all vehicle components.
+
+### Comments Tab
+
+The Comments tab provides a free-text area for underwriters and administrators to add notes, observations, and special instructions related to the policy. These comments might include underwriting considerations, inspection requirements, or customer service notes. The comment history is preserved for future reference and creates an audit trail of policy decisions and communications.
+
+### Covered Countries Tab
+
+The Covered Countries tab specifies the geographic regions where the insurance coverage is valid. By default, coverage typically applies only within the country of issue, but this tab allows extension to specific additional countries as needed. Each country entry may affect the premium and trigger specific endorsements or documentation requirements like International Motor Insurance Cards.
+
+### Renewals Tab
+
+The Renewals tab tracks the policy's renewal history and future scheduling. For existing policies being renewed, this tab shows previous terms, premium history, and coverage changes over time. For new policies, this tab remains relatively empty until the first renewal cycle approaches. The renewal information helps maintain continuity of coverage and supports customer retention efforts.
+
+### Claims Tab
+
+The Claims tab displays the claim history associated with this specific vehicle and policyholder. For vehicles with previous insurance, this tab may show imported claims data that impacts current underwriting decisions. Each claim entry typically includes date, type, amount, and status information. This claim history directly influences premium calculations and coverage eligibility.
+
+### Endorsements Tab
+
+The Endorsements tab manages policy amendments that occur after the initial policy issuance. Endorsements might include changes to vehicle details, coverage limits, or policyholder information. Each endorsement is recorded with its effective date, description, and premium impact. This tab ensures that all policy modifications are properly documented and priced.
+
+### Messages Tab
+
+The Messages tab maintains a communication log relate
 
 ---
 
